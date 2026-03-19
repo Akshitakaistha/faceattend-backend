@@ -2,16 +2,10 @@ services:
   - type: web
     name: faceattend-backend
     runtime: node
-    buildCommand: npm install && node download-models.js
+    buildCommand: npm install
     startCommand: node server.js
     envVars:
       - key: NODE_ENV
         value: production
       - key: ADMIN_KEY
-        value: changeme123   # Change this to something secret!
-      - key: DB_PATH
-        value: /var/data/faceattend.db
-    disk:
-      name: faceattend-data
-      mountPath: /var/data
-      sizeGB: 1
+        value: changeme123
