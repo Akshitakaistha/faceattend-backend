@@ -2,7 +2,7 @@ services:
   - type: web
     name: faceattend-backend
     runtime: node
-    buildCommand: npm install
+    buildCommand: npm install && node download-models.js
     startCommand: node server.js
     envVars:
       - key: NODE_ENV
